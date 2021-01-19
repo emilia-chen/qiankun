@@ -12,7 +12,7 @@ let instance = null;
 
 // 导出子应用生命周期 挂载前
 export async function bootstrap(props = {}) {
-  console.log('从父应用继承的数据',props);
+  console.log('从父应用继承的数据1',props);
   
   Array.isArray(props.fns) && props.fns.map(i => {
     Vue.prototype[i.name] = i[i.name]

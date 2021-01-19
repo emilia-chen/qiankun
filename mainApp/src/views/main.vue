@@ -15,15 +15,16 @@ export default {
   },
   methods: {   // 返回s
     loadApp () {
-      console.log('loadApp')
-       loadMicroApp({     name: "app1",
+      console.log('loadApp')  //只是加载了，需要路由跳转才会再显示
+       loadMicroApp({     name: "b",
             entry: "//localhost:8091",
-            container:document.getElementById('main-root'),//this.$refs.showContent,
+         //   activeRule: "/#/app1",
+            container:document.getElementById('a'),//this.$refs.showContent,
             //
           props: { name: 'qiankun' },
        });
     },
-    clickApp() {
+    clickApp() {  
       this.$router.push({ path:'/app1'
       })
     }

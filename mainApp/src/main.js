@@ -2,7 +2,7 @@ import Vue from "vue"
 import App from "./App.vue"
 import router from "./router"
 
-import { registerMicroApps, setDefaultMountApp, start } from "qiankun"
+//import {  start } from "qiankun"
 Vue.config.productionTip = false
 let app = null;
 /**
@@ -53,59 +53,59 @@ function initApp() {
 initApp();
 
 // 传入子应用的数据
-let msg = {
-    data: {
-        auth: false
-    },
-    fns: [
-        {
-            name: "_LOGIN",
-            _LOGIN(data) {
-                console.log(`父应用返回信息${data}`);
-            }
-        }
-    ]
-};
+// let msg = {
+//     data: {
+//         auth: false
+//     },
+//     fns: [
+//         {
+//             name: "_LOGIN",
+//             _LOGIN(data) {
+//                 console.log(`父应用返回信息${data}`);
+//             }
+//         }
+//     ]
+// };
 // 注册子应用
-registerMicroApps(
-    [
-        {
-            name: "app1",
-            entry: "//localhost:8091",
-            render,
-            activeRule: "/#/app1",
-            props: msg
-        },
-        {
-            name: "app2",
-            entry: "//localhost:8092",
-            render,
-            activeRule: "/#/app2",
-            props: msg
-        }
-    ],
-    {
-        beforeLoad: [
-            () => {
-                localStorage.a=123
-                console.log("before load");
-            }
-        ], // 挂载前回调
-        beforeMount: [
-            () => {
-                console.log("before mount");
-            }
-        ], // 挂载后回调
-        afterUnmount: [
-            () => {
-                console.log("after unload");
-            }
-        ] // 卸载后回调
-    }
-);
+// registerMicroApps(
+//     [
+//         {
+//             name: "app1",
+//             entry: "//localhost:8091",
+//             render,
+//             activeRule: "/#/app1",
+//             props: msg
+//         },
+//         {
+//             name: "app2",
+//             entry: "//localhost:8092",
+//             render,
+//             activeRule: "/#/app2",
+//             props: msg
+//         }
+//     ],
+//     {
+//         beforeLoad: [
+//             () => {
+//                 localStorage.a=123
+//                 console.log("before load");
+//             }
+//         ], // 挂载前回调
+//         beforeMount: [
+//             () => {
+//                 console.log("before mount");
+//             }
+//         ], // 挂载后回调
+//         afterUnmount: [
+//             () => {
+//                 console.log("after unload");
+//             }
+//         ] // 卸载后回调
+//     }
+// );
 
 // 设置默认子应用,与 genActiveRule中的参数保持一致
-setDefaultMountApp("/#/app1");
+//setDefaultMountApp("/#/app1");
 
 // 启动
-start();
+//start();
