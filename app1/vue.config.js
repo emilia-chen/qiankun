@@ -40,7 +40,7 @@ module.exports = {
                 '@': resolve('src'),
             },
         },
-        //externals: ['vue', 'vue-router'],
+       // externals: ['vue'],
         output: {
             // 把子应用打包成 umd 库格式
             library: `${name}-[name]`,

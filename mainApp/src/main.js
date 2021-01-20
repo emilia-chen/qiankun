@@ -1,8 +1,10 @@
 import Vue from "vue"
 import App from "./App.vue"
 import router from "./router"
-
 //import {  start } from "qiankun"
+//
+//window.Vue = Vue;
+//window.VueRouter = router;
 Vue.config.productionTip = false
 let app = null;
 /**
